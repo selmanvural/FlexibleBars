@@ -1,7 +1,7 @@
 <GuiXml> 
 	<Controls>
 		
-		<Control name="FlexibleBars_Template" virtual="true"> <!---->
+		<Control name="FlexibleBars_Template" virtual="true"> 
 			<Dimensions x="250" y="25" />
 			<Controls>
 				<StatusBar name="$(parent)Resource" color="991313">
@@ -14,10 +14,12 @@
 						</Backdrop>
 					</Controls>
 				</StatusBar>
-				<Label name="$(parent)Value" font="ZoFontGamepadBold18" wrapMode="ELLIPSIS" horizontalAlignment="1" verticalAlignment="1" text="Test">
+				<Label name="$(parent)Value" font="ZoFontGameBold" wrapMode="ELLIPSIS" horizontalAlignment="0" verticalAlignment="1" color="FFFFFF">
 					<AnchorFill />
 				</Label>
-				
+				<Label name="$(parent)Percent" font="ZoFontGameBold" wrapMode="ELLIPSIS" horizontalAlignment="2" verticalAlignment="1">
+					<AnchorFill />
+				</Label>
 			</Controls>
 		</Control>
 
@@ -29,37 +31,27 @@
 			</Controls>
 		</TopLevelControl>
 
-
-
-		<StatusBar name="FlexibleBars_ShieldBarTemplate" inherits="ZO_PowerShieldBar ZO_DefaultStatusBarBase" virtual="true">
-			<Dimensions y="25" />
+		<StatusBar name="FlexibleBars_ShieldBarTemplate" inherits="ZO_PowerShieldBar" virtual="true">
 			<Controls>
 				<StatusBar name="$(parent)Trauma" inherits="ZO_DefaultStatusBarBase" level="ZO_ATTRIBUTE_BAR_POWER_SHIELD_TRAUMA_LEVEL">
-					<Dimensions y="25" />
+					<Anchor point="RIGHT" relativePoint="LEFT" offsetX="11" />
 				</StatusBar>
 
 				<StatusBar name="$(parent)FakeHealth" inherits="ZO_DefaultStatusBarBase" level="ZO_ATTRIBUTE_BAR_POWER_SHIELD_FAKE_HEALTH_LEVEL">
-					<Dimensions y="25" />
+					<Anchor point="RIGHT" relativeTo="$(parent)Trauma" relativePoint="LEFT" offsetX="11" />
 				</StatusBar>
 
 				<StatusBar name="$(parent)NoHealingInner" inherits="ZO_DefaultStatusBarBase" level="ZO_ATTRIBUTE_BAR_POWER_SHIELD_NO_HEALING_LEVEL">
-					<Dimensions y="25" />
+					<Anchor point="RIGHT" relativeTo="$(parent)Trauma" relativePoint="LEFT" offsetX="11" />
 				</StatusBar>
 
 				<StatusBar name="$(parent)FakeNoHealingInner" inherits="ZO_DefaultStatusBarBase" level="ZO_ATTRIBUTE_BAR_POWER_SHIELD_FAKE_NO_HEALING_INNER_LEVEL">
-					<Dimensions y="25" />
+					<Anchor point="RIGHT" relativeTo="$(parent)Trauma" relativePoint="LEFT" offsetX="11" />
 				</StatusBar>
 			</Controls>
 		</StatusBar>
 
-    	
-		<StatusBar name="FlexibleBars_ShieldBarTemplate_Gamepad_Template" inherits="FlexibleBars_ShieldBarTemplate" virtual="true">
-		</StatusBar>
-
-		<StatusBar name="FlexibleBars_ShieldBarTemplate_Keyboard_Template" inherits="FlexibleBars_ShieldBarTemplate" virtual="true">
-        </StatusBar>
-
-
+		<StatusBar name="FlexibleBars_ShieldBarTemplate_Keyboard_Template" inherits="FlexibleBars_ShieldBarTemplate" virtual="true" />
 
 	</Controls>
 </GuiXml>
